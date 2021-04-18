@@ -104,6 +104,7 @@ describe("Reducers::Nodes", () => {
           loading: false,
           blocks: {
             loading: false,
+            error: true,
             list: null,
           },
         },

@@ -83,6 +83,7 @@ export default function nodesReducer(state = initialState().nodes, action) {
           url: action.node.url,
           blocks: {
             loading: false,
+            error: true,
             list: null,
           },
         }),

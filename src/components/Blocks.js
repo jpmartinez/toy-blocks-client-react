@@ -5,11 +5,13 @@ import Block from "./Block";
 
 export default function Blocks({ blocks = {} }) {
   const classes = useStyles();
-  const { loading, list } = blocks;
+  const { loading, list, error } = blocks;
   if (loading) {
     return <span>LOADING</span>;
   }
-
+  if (error) {
+    return <span>ERROR</span>;
+  }
   if (list && list.length) {
     return (
       <Box className={classes.container}>
@@ -26,6 +28,7 @@ export default function Blocks({ blocks = {} }) {
 Blocks.propTypes = {
   blocks: PropTypes.shape({
     loading: PropTypes.bool,
+    error: PropTypes.bool,
     list: PropTypes.array,
   }),
 };
