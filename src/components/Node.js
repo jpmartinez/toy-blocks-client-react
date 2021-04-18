@@ -1,15 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  Typography,
-  ExpansionPanelDetails,
-  makeStyles,
   Box,
+  ExpansionPanel,
+  ExpansionPanelDetails,
+  ExpansionPanelSummary,
+  makeStyles,
+  Typography,
 } from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import PropTypes from "prop-types";
+import React from "react";
 import colors from "../constants/colors";
+import Blocks from "./Blocks";
 import Status from "./Status";
 
 const Node = ({ node, expanded, toggleNodeExpanded }) => {
@@ -46,7 +47,7 @@ const Node = ({ node, expanded, toggleNodeExpanded }) => {
         </Box>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        <Typography>Blocks go here</Typography>
+        <Blocks blocks={node.blocks}></Blocks>
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );
